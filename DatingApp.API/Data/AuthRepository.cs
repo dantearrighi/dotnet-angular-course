@@ -12,7 +12,6 @@ namespace DatingApp.API.Data
         public AuthRepository(DataContext context)
         {
             this._context = context;
-
         }
         
         public async Task<User> Login(string username, string password)
@@ -67,7 +66,7 @@ namespace DatingApp.API.Data
 
         public async Task<bool> UserExists(string username)
         {
-            if (await _context.Users.AnyAsync(x => x.Username== username))
+            if (await _context.Users.AnyAsync(x => x.Username == username))
                 return true;
 
             return false;
